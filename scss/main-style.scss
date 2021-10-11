@@ -1,0 +1,372 @@
+@import "variables.scss";
+@import "mixin.scss";
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    h2 {
+        color: #242a3a;
+        white-space: nowrap;
+    }
+
+    h4 {
+        color: #7e622b;
+    }
+
+    h4,
+    p {
+        padding: 10px 0;
+    }
+
+    p {
+        color: #757c99;
+    }
+
+    .header {
+        height: 80px;
+
+        .rectangle {
+            width: 50px;
+            height: 50px;
+            background-color: #242a3a;
+            border-radius: 2px;
+            position: fixed;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+    }
+
+    .team-names {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .row {
+        @include gridcode;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:nth-child(even) {
+            position: relative;
+            left: 95px;
+        }
+
+        .team-roles {
+            @include flexcode;
+
+            .octagon {
+                position: relative;
+                width: 220px;
+            }
+
+            .content {
+                padding: 0 60px;
+            }
+
+            .octagon img {
+                width: 190px;
+                height: 200px;
+                clip-path: polygon(0% 25%, 50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%);
+            }
+
+            .text-direction {
+                text-align: right;
+            }
+
+            .text-top {
+                align-self: start;
+            }
+
+            .text-bottom {
+                align-self: end;
+            }
+
+            #ceo {
+                background-color: #7e6990;
+            }
+
+            #designer {
+                background-color: #eb6d4a;
+            }
+
+            #Programmer {
+                background-color: #e1854f;
+            }
+
+            #Markter {
+                background-color: #7ddbd4;
+            }
+
+            #black-border {
+                border-color: black;
+            }
+
+            #black-border::before,
+            #black-border::after {
+                background-color: black;
+            }
+
+            
+       
+    }
+    .shape,
+            .shape-right,
+            .shape-down,
+            .shape-right-bottom {
+                border-style: dashed;
+                border-color: #d4aa58;
+                width: 30px;
+                height: 100px;
+                position: absolute;
+            }
+
+            .shape,
+            .has-right .shape-right,
+            .has-right .shape-right-bottom,
+            .has-reverse-shape .shape-down {
+                border-width: 0 0 2px 2px;
+                left: -30px;
+                top: 4px;
+            }
+
+            .shape-right,
+            .has-right .shape,
+            .has-reverse-shape .shape-right-bottom {
+                border-width: 0 2px 2px 0;
+                left: auto;
+                right: -30px;
+                top: 4px;
+            }
+
+            .shape-down,
+            .has-reverse-shape .shape {
+                border-width: 2px 0 0 2px;
+                bottom: 0px;
+                top: auto;
+            }
+
+            .shape-right-bottom,
+            .has-reverse-shape .shape-right,
+            .has-right.has-reverse-shape .shape {
+                border-width: 2px 2px 0 0;
+                bottom: 0px;
+                right: -30px;
+                left: auto;
+                top: auto;
+            }
+
+            .shape::before,
+            .shape::after,
+            .shape-down::before,
+            .shape-right-bottom::before {
+                content: "";
+                position: absolute;
+                background-color: #d4aa58;
+            }
+
+            .shape::before,
+            .shape-right::before,
+            .shape-down::before,
+            .shape-right-bottom::before {
+                width: 10px;
+                height: 10px;
+                clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            }
+
+            .shape::before,
+            .has-right .shape-right::before,
+            .has-right .shape-right-bottom::before,
+            .has-reverse-shape .shape-down::before {
+                left: -6px;
+                top: -1px;
+            }
+
+            .shape-right::before,
+            .has-right .shape::before,
+            .has-reverse-shape .shape-right-bottom::before {
+                right: -6px;
+                left: auto;
+                top: -1px;
+            }
+
+            .shape-down::before,
+            .has-reverse-shape .shape::before {
+                left: -6px;
+                bottom: -1px;
+                top: auto;
+            }
+
+            .shape-right-bottom::before,
+            .has-right.has-reverse-shape .shape-down::before,
+            .has-right.has-reverse-shape .shape-right-bottom::before {
+                right: -6px;
+                bottom: -1px;
+                top: auto;
+                left: auto;
+            }
+
+            .shape::after,
+            .shape-right::after,
+            .shape-right-bottom::after {
+                width: 20px;
+                height: 20px;
+                z-index: 100;
+                clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            }
+
+            .shape::after {
+                bottom: -10px;
+                right: -10px;
+            }
+
+            .shape-right::after,
+            .has-right .shape::after {
+                bottom: -10px;
+                left: -10px;
+            }
+
+            .shape-down::after,
+            .has-reverse-shape .shape::after {
+                top: -11px;
+                bottom: auto;
+                right: -10px;
+            }
+
+            .shape-right-bottom::after,
+            .has-right.has-reverse-shape .shape-down::after,
+            .has-right.has-reverse-shape .shape-right-bottom::after {
+                top: -11px;
+                bottom: auto;
+                right: 18px;
+            }
+        }
+
+        /* change the dirction of the shape when use this class */
+
+        .has-right {
+            display: flex;
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+
+        .has-right .text-direction {
+            text-align: left;
+        }
+
+        .has-right .shape-right::after {
+            bottom: -10px;
+            right: -10px;
+        }
+
+        .has-right .shape-down::after,
+        .has-reverse-shape .shape-right-bottom::after {
+            bottom: -10px;
+            left: -10px;
+            top: auto;
+        }
+
+        .has-right .shape-right-bottom::after {
+            bottom: -10px;
+            right: -10px;
+            top: auto;
+        }
+
+        /* Direction of the arrow change code start here */
+
+        .has-reverse-shape .shape-right::before,
+        .has-right.has-reverse-shape .shape::before {
+            left: 24px;
+        }
+
+        .has-reverse-shape .shape-down::after {
+            bottom: -10px;
+            right: -10px;
+            top: auto;
+        }
+
+        /* both class used at the same time to change direction and arrow position */
+
+        .has-right.has-reverse-shape .shape-right::after {
+            left: -10px;
+        }
+
+
+     /* color change class for small shape */
+
+     .change-color .shape::before,
+     .change-color .shape::after {
+         background-color: $shape-bg-color;
+     }
+
+     .change-color h4,
+     .change-color p {
+         color: $text-color;
+     }
+}
+
+@media screen and (max-width: $small) {
+    .wrapper {
+        .row {
+            @include querygridcode;
+
+            &:nth-child(even) {
+                @include afterrowcode;
+            }
+
+            .team-roles {
+                @include flexcode;
+                border: 1px dashed black;
+
+                .shape {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $small) and (max-width: $medium) {
+    .wrapper {
+        .row {
+            @include querygridcode;
+
+            &:nth-child(even) {
+                @include afterrowcode;
+            }
+
+            .team-roles {
+                border: 1px dashed bisque;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $medium) and (max-width: $large) {
+    .wrapper {
+        .row {
+            display: grid;
+            border: 1px dashed teal;
+            margin: 0;
+
+            &:nth-child(even) {
+                @include afterrowcode;
+            }
+        }
+    }
+}

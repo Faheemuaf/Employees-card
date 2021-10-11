@@ -1,0 +1,28 @@
+//mixin code start here
+
+@mixin gridcode {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    margin: -56px auto 0;
+}
+
+@mixin flexcode {
+    display: flex;
+    align-items: center;
+}
+
+@mixin querygridcode {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 40px;
+    margin: 0;
+    overflow: hidden;
+}
+
+@mixin afterrowcode {
+    left: 0;
+    top: 40px;
+}
